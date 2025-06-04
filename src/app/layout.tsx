@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${poppins.variable} ${sourceCodePro.variable} bg-organic-gradient text-neutral-light antialiased`}>
+      <body className={`${inter.variable} ${poppins.variable} ${sourceCodePro.variable} bg-organic-cellular-gradient bg-cellular-sm text-neutral-light antialiased`}>
         <Header />
         <main className="overflow-hidden pt-20"> {/* Added pt-20 for fixed header */}
           {children}

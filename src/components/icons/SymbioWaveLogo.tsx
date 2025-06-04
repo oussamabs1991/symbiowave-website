@@ -1,29 +1,53 @@
 // src/components/icons/SymbioWaveLogo.tsx
-import Image from 'next/image';
-import React from 'react';
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils'; // Assuming utils.ts contains a cn function
 
 interface SymbioWaveLogoProps {
-  width?: number;
-  height?: number;
   className?: string;
-  priority?: boolean;
+  animated?: boolean;
 }
 
-export const SymbioWaveLogo: React.FC<SymbioWaveLogoProps> = ({
-  width = 250, // Adjust default width for symbiowave_full_logo.png
-  height = 80, // Adjust default height to maintain aspect ratio
-  className,
-  priority = false,
-}) => {
+const SymbioWaveLogo: React.FC<SymbioWaveLogoProps> = ({ className, animated = true }) => {
+  const text = "SymbioWave";
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.04 * i },
+    }),
+  };
+  const childVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+      transition: { type: 'spring', damping: 12, stiffness: 100 },
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'spring', damping: 12, stiffness: 100 },
+    },
+  };
+
   return (
-    <Image
-      // Assuming your image is at public/images/symbiowave_full_logo.png
-      src="/images/symbiowave_full_logo.png"
-      alt="SymbioWave Full Logo"
-      width={width}
-      height={height}
-      className={className}
-      priority={priority}
-    />
+    <motion.div
+      className={cn("font-heading text-4xl font-bold", className)}
+      variants={animated ? containerVariants : undefined}
+      initial="hidden"
+      animate="visible"
+    >
+      <span className="sr-only">{text}</span> {/* For accessibility */}
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          variants={animated ? childVariants : undefined}
+          className={char === 'W' || char === 'a' || char === 'v' || char === 'e' ? 'text-accent-gold' : 'text-neutral-lightest'}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </motion.div>
   );
 };
+
+export { SymbioWaveLogo };
