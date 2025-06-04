@@ -33,7 +33,7 @@ export default function HomePage() {
         This is a foundational structure. Add more sections and components as per the project brief.
       </p>
       <p className="text-neutral-light/60">
-        Remember to run 'npm install' or 'yarn install'.
+        Remember to run &apos;npm install&apos; or &apos;yarn install&apos;.
       </p>
     </div>
   );
