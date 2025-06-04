@@ -1,11 +1,13 @@
+// next.config.mjs
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // For Cloudflare Pages static export, you might need:
-  // output: 'export',
-  // images: {
-  //   unoptimized: true, // If using next/image with static export
-  // },
+  // For Cloudflare Pages static export:
+  output: 'export', // <--- UNCOMMENT AND ACTIVATE THIS
+  images: {
+    unoptimized: true, // <--- UNCOMMENT AND ACTIVATE THIS
+  },
 };
 
 export default nextConfig;
