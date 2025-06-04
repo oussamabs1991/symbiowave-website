@@ -130,7 +130,7 @@ export default function HomePage() {
     },
   ];
 
-  const symbioWaveDivisions = [
+  const symbioWaveDivisions: DivisionType[] = [
     {
       id: "symbio-core",
       name: "SymbioCore",
@@ -180,6 +180,8 @@ export default function HomePage() {
       details: "Manages strategic alliances and collaborations with academic institutions, industry leaders, and research organizations worldwide to accelerate the adoption and impact of ACI."
     }
   ];
+
+  console.log('[SymbioWave] HomePage: All local constants defined, preparing to render JSX.');
 
   return (
     <> {/* Use a fragment to return multiple sections */}
@@ -792,3 +794,5 @@ export default function HomePage() {
     </>
   );
 }
+
+[end of src/app/page.tsx]
