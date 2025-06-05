@@ -184,9 +184,9 @@ export default function HomePage() {
       <section className="min-h-screen flex flex-col items-center justify-center text-center p-4 relative overflow-hidden animate-breathing">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SymbioWaveLogo animated={true} className="mx-auto h-20 md:h-28 mb-8" />
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-neutral-lightest">
-            Enter the <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-light via-secondary-light to-accent-gold">Cellular Intelligence</span> Realm
-          </h1>
+          //<h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-neutral-lightest">
+          //Enter the <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-light via-secondary-light to-accent-gold">Cellular Intelligence</span> Realm
+          //</h1>
           <p className="mt-6 max-w-xl md:max-w-2xl mx-auto text-lg md:text-xl text-neutral-light/80">
             AI for a Symbiotic Future — Powered by Artificial Cellular Intelligence.
           </p>
