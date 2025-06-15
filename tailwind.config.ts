@@ -40,14 +40,26 @@ const config: Config = {
       },
       backgroundImage: {
         'organic-gradient': 'linear-gradient(180deg, #0A1628 0%, #000000 100%)',
+        'organic-cellular-gradient': 'linear-gradient(180deg, #0A1628 0%, #000000 100%), radial-gradient(rgba(59, 130, 246, 0.08) 0.5px, transparent 1px)',
+      },
+      backgroundSize: {
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+        'cellular-sm': '10px 10px', // For the radial gradient dots
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'ripple': 'ripple 0.6s linear',
+        'breathing': 'breathing 6s ease-in-out infinite',
       },
       keyframes: {
         ripple: {
           'to': { transform: 'scale(4)', opacity: '0' },
+        },
+        breathing: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.7' },
+          '50%': { transform: 'scale(1.03)', opacity: '1' },
         }
       },
       boxShadow: {
